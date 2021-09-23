@@ -14,7 +14,6 @@ os.system('cls')
 class Categoria:
     def __init__(self, nombre):
         self.nombre = nombre
-    pass
 
 
 def agregarCategoria():
