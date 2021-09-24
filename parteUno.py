@@ -1,5 +1,6 @@
-# import json
+
 import os
+from conexion import ConexionJSON
 os.system('cls')
 
 # Desarrollar un programa que sea capaz de gestionar un listado de categorías de libros, esto implica poder agregar y eliminar elementos
@@ -11,35 +12,61 @@ os.system('cls')
 # Se deberán utilizar clases para definir la estructura de los datos, en este caso, Categoria. Los atributos y métodos a utilizar son de libre elección.
 
 
+conn = ConexionJSON
+
+
 class Categoria:
-    def __init__(self, nombre):
+    def __init__(self, nombre, descripcion):
         self.nombre = nombre
-    pass
+        self.descripcion = descripcion
 
 
-def agregarCategoria():
+def addCategory():
+    # dato = {}
+    # dato["Categorias"] = []
     nombre = input('INGRESE UN NOMBRE PARA LA CATEGORIA: ')
-    categoria = Categoria(nombre)
-    print(categoria.nombre)
-    pass
+    descripcion = input('INGRESE UNA DESCRIPCION BREVE DE LA CATEGORIA: ')
+    categoria = Categoria(nombre, descripcion)
+    dato = conn.readJSON()
+    dato["Categorias"].append(
+        {
+            "nombre": categoria.nombre,
+            "descripcion": categoria.descripcion
+        }
+    )
+    conn.writeJSON(dato)
 
 
-def eliminarCategoria():
-    pass
+def removeCategory():
+    dato = conn.readJSON()
+    nombreCategoria = input("INGRESE EL NOMBRE DE LA CATEGORIA A ELIMINAR: ")
+    for i in dato["Categorias"]:
+        for value in i.values():
+            if value == nombreCategoria:
+                dato["Categorias"].remove(i)
+    conn.writeJSON(dato)
+
+
+def toListCategory():
+    dato = conn.readJSON()
+    print("NOMBRE \t\t DESCRIPCION")
+    for i in dato["Categorias"]:
+        for value in i.values():
+            print(value, end=" \t ")
+        print("\n======================================================")
 
 
 while True:
-    agregarCategoria()
     print('[1] AGREGAR CATEGORIA')
     print('[2] ELIMINAR CATEGORIA')
     print('[3] LISTAR CATEGORIA')
     print('[4] SALIR DEL PROGRAMA')
     op = int(input('INGRESE LA OPCION: '))
     if op == 1:
-        pass
+        addCategory()
     elif op == 2:
-        pass
+        removeCategory()
     elif op == 3:
-        pass
+        toListCategory()
     elif op == 4:
         exit()
