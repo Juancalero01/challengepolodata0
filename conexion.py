@@ -1,12 +1,14 @@
 import json
+bd = 'categorias.json'
 
 
-class ConexionJSON:
-    def readJSON():
-        with open("bdParteUno.json", "r") as archivo:
-            dato = json.load(archivo)
-        return dato
+class BaseDatos():
+    def leerBd():
+        with open(bd, 'r') as archivo:
+            datos = json.load(archivo)
+        return datos
 
-    def writeJSON(dato):
-        with open("bdParteUno.json", "w") as archivo:
-            json.dump(dato, archivo)
+    def escribirBd(dato):
+        with open(bd, 'w') as archivo:
+            json.dump(dato, archivo, indent=4)
+    
