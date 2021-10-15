@@ -1,1 +1,20 @@
-{"Categorias": [{"nombre": "Ciencia", "descripcion": "Estudios sobre animales exoticos"}, {"nombre": "Deporte", "descripcion": "Fubtol y otros deportes"}, {"nombre": "Politica", "descripcion": "El lavadero de los K"}, {"nombre": "Tecnologia", "descripcion": "Python es dificil"}]}
+{
+    "Categorias": [
+        {
+            "nombre": "Ciencia",
+            "descripcion": "Estudios sobre animales exoticos"
+        },
+        {
+            "nombre": "Deporte",
+            "descripcion": "Fubtol y otros deportes"
+        },
+        {
+            "nombre": "Politica",
+            "descripcion": "El lavadero de los K"
+        },
+        {
+            "nombre": "Tecnologia",
+            "descripcion": "Python es dificil"
+        }
+    ]
+}
