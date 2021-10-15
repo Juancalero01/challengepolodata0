@@ -1,0 +1,20 @@
+{
+    "autores": [
+        {
+            "nombre": "Juan Carlos",
+            "apellido": "González"
+        },
+        {
+            "nombre": "Miguel Ángel",
+            "apellido": "Sosa"
+        },
+        {
+            "nombre": "Ana María",
+            "apellido": "Pérez"
+        },
+        {
+            "nombre": "María Cristina",
+            "apellido": "Martínez"
+        }
+    ]
+}
