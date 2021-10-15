@@ -20,8 +20,8 @@ def añadirCategoria():
             "nombre": c.nombre
         }
     )
-    print('SE REGISTRO CORRECTAMENTE')
     bd.escribirBd(dato)
+    print('SE REGISTRO CORRECTAMENTE')
     time.sleep(1)
     os.system('cls')
 
@@ -33,8 +33,9 @@ def eliminarCategoria():
         for v in i.values():
             if v == idCategoria:
                 dato["categorias"].remove(i)
-                print('SE ELIMINO CORRECTAMENTE')
+
     bd.escribirBd(dato)
+    print('SE ELIMINO CORRECTAMENTE')
     time.sleep(1)
     os.system('cls')
 
