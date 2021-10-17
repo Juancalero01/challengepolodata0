@@ -17,18 +17,21 @@ class Autor():
         )
         db.guardarAutor(self.dato)
 
-    def eliminarAutor(self, nombre):
+    def eliminarAutor(self, id):
         self.dato = db.datosAutor()
+        self.contador = 0
         for i in self.dato['autores']:
-            for v in i.values():
-                if v == nombre:
-                    self.dato["autores"].remove(i)
+            self.contador += 1
+            if self.contador == id:
+                self.dato["autores"].remove(i)
         db.guardarAutor(self.dato)
 
     def listarAutor(self):
         self.dato = db.datosAutor()
         self.contador = 0
-        print('ID \t NOMBRE \t APELLIDO')
+        print("===========================")
+        print('ID \t NOMBRE\t APELLIDO')
+        print("===========================")
         for i in self.dato['autores']:
             self.contador += 1
             print(f"{self.contador}", end=" ")

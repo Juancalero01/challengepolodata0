@@ -1,3 +1,9 @@
 {
-    "libros": []
+    "libros": [
+        {
+            "titulo": "prueba",
+            "categoria": "Historia",
+            "autor": "Juan Gomez"
+        }
+    ]
 }

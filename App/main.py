@@ -1,101 +1,172 @@
 from Clases.autor import Autor
 from Clases.categoria import Categoria
 from Clases.libro import Libro
+import os
+from time import sleep
+
+# Github https://github.com/Juancalero01/testJson-py
+
+
+def clear():
+    return os.system('cls')
+
+
 a = Autor()
 c = Categoria()
 l = Libro()
-
-# PRIMERA PARTE DEL PROYECTO
 
 
 def registrarCategoria():
     c.nombre = input('INGRESE EL NOMBRE DE LA NUEVA CATEGORIA: ').capitalize()
     c.registrarCategoria(c.nombre)
+    sleep(1)
+    print('SE REGISTRO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
 
 def eliminarCategoria():
     c.listarCategoria()
-    c.nombre = input('INGRESE EL NOMBRE DE LA CATEGORIA: ')
-    c.eliminarCategoria(c.nombre)
-
-
-def listarCategorias():
-    c.listarCategoria()
-
-
-# SEGUNDA PARTE DEL PROYECTO
+    idCategoria = int(input('INGRESE EL ID DE LA CATEGORIA: '))
+    c.eliminarCategoria(idCategoria)
+    sleep(1)
+    print('SE ELIMINO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
 
 def registrarAutor():
     a.nombre = input('INGRESE EL NOMBRE DEL NUEVO AUTOR: ').capitalize()
     a.apellido = input('INGRESE EL APELLIDO DEL NUEVO AUTOR: ').capitalize()
     a.registrarAutor(a.nombre, a.apellido)
+    sleep(1)
+    print('SE REGISTRO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
 
 def eliminarAutor():
     a.listarAutor()
-    a.nombre = input('INGRESE EL NOMBRE DEl AUTOR QUE ELIMINARA: ')
-    a.eliminarAutor(a.nombre)
+    idAutor = int(input('INGRESE EL ID DEL AUTOR: '))
+    a.eliminarAutor(idAutor)
+    sleep(1)
+    print('SE ELIMINO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
-
-def listarAutores():
-    a.listarAutor()
-
-
-# TERCERA PARTE DEL PROYECTO
 
 def registrarLibro():
-    listarCategorias()
-    idCategoria = int(input("INGRESE EL ID DE LA CATEGORIA: "))
+    l.titulo = input('INGRESE EL TITULO DEL LIBRO: ')
+    c.listarCategoria()
+    idCategoria = int(input('INGRESE EL ID DE LA CATEGORIA: '))
     l.categoria = c.retornarCategoria(idCategoria)
-    idAutor = int(input("INGRESE EL ID DEL AUTOR: "))
-    l.autor = a.retornarAutor(idAutor)
-    pass
+    a.listarAutor()
+    idAutor = int(input('INGRESE EL ID DEL AUTOR: '))
+    nombre, apellido = a.retornarAutor(idAutor)
+    l.autor = f"{nombre} {apellido}"
+    l.registrarLibro(l.titulo, l.categoria, l.autor)
+    sleep(1)
+    print('SE REGISTRO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
 
 def eliminarLibro():
-    pass
+    l.listarLibro()
+    idLibro = int(input('INGRESE EL ID DEL LIBRO: '))
+    l.eliminarLibro(idLibro)
+    sleep(1)
+    print('SE ELIMINO CORRECTAMENTE ')
+    sleep(2)
+    clear()
 
 
-def listarLibros():
-    pass
+def categorias():
+    while True:
+        print('===========================')
+        print('[1]REGISTRAR CATEGORIA')
+        print('[2]ELIMINAR CATEGORIA')
+        print('[3]LISTAR CATEGORIAS')
+        print('[4]CERRAR')
+        print('===========================')
+        op = input('INGRESE LA OPCION: ')
+        if op == '1':
+            clear()
+            registrarCategoria()
+        elif op == '2':
+            clear()
+            eliminarCategoria()
+        elif op == '3':
+            clear()
+            c.listarCategoria()
+            input('PRESIONE ENTER PARA SALIR.. ')
+            clear()
+        elif op == '4':
+            break
+
+
+def autores():
+    while True:
+        print('===========================')
+        print('[1]REGISTRAR AUTOR')
+        print('[2]ELIMINAR AUTOR')
+        print('[3]LISTAR AUTORES')
+        print('[4]CERRAR')
+        print('===========================')
+        op = input('INGRESE LA OPCION: ')
+        if op == '1':
+            clear()
+            registrarAutor()
+        elif op == '2':
+            clear()
+            eliminarAutor()
+        elif op == '3':
+            clear()
+            a.listarAutor()
+            input('PRESIONE ENTER PARA SALIR.. ')
+            clear()
+        elif op == '4':
+            break
+
+
+def libros():
+    while True:
+        print('===========================')
+        print('[1]REGISTRAR LIBRO')
+        print('[2]ELIMINAR LIBRO')
+        print('[3]LISTAR LIBROS')
+        print('[4]CERRAR')
+        print('===========================')
+        op = input('INGRESE LA OPCION: ')
+        if op == '1':
+            clear()
+            registrarLibro()
+        elif op == '2':
+            clear()
+            eliminarLibro()
+        elif op == '3':
+            clear()
+            l.listarLibro()
+            input('PRESIONE ENTER PARA SALIR.. ')
+            clear()
+        elif op == '4':
+            break
 
 
 while True:
-    n = a.retornarAutor(1)
-    print(n)
+    clear()
     print('===========================')
-    print('[1]REGISTRAR CATEGORIA')
-    print('[2]ELIMINAR CATEGORIA')
-    print('[3]LISTAR CATEGORIAS')
-    print('===========================')
-    print('[4]REGISTRAR AUTOR')
-    print('[5]ELIMINAR AUTOR')
-    print('[6]LISTAR AUTORES')
-    print('===========================')
-    print('[7]REGISTRAR LIBRO')
-    print('[8]ELIMINAR LIBRO')
-    print('[9]LISTAR LIBROS')
+    print('[1]CATEGORIAS')
+    print('[2]AUTORES')
+    print('[3]LIBROS')
     print('===========================')
     op = input('INGRESE LA OPCION: ')
     if op == '1':
-        registrarCategoria()
+        clear()
+        categorias()
     elif op == '2':
-        eliminarCategoria()
+        clear()
+        autores()
     elif op == '3':
-        listarCategorias()
-    elif op == '4':
-        registrarAutor()
-    elif op == '5':
-        eliminarAutor()
-    elif op == '6':
-        listarAutores()
-    elif op == '7':
-        # listarAutores()
-        pass
-    elif op == '8':
-        # eliminarAutor()
-        pass
-    elif op == '9':
-        # listarAutores()
-        pass
+        clear()
+        libros()

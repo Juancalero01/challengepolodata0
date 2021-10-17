@@ -1,12 +1,12 @@
 {
     "autores": [
         {
-            "nombre": "Jose fernando",
-            "apellido": "Guerrero"
+            "nombre": "Juan",
+            "apellido": "Gomez"
         },
         {
-            "nombre": "Diego Javier",
-            "apellido": "Acuña"
+            "nombre": "Pedro",
+            "apellido": "Puch"
         }
     ]
 }

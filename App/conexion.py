@@ -29,10 +29,10 @@ class DatosCategoria:
 
 class DatosLibro:
     def datosLibro():
-        with open(autor, 'r') as archivo:
+        with open(libro, 'r') as archivo:
             datos = json.load(archivo)
         return datos
 
     def guardarLibro(dato):
-        with open(autor, 'w') as archivo:
+        with open(libro, 'w') as archivo:
             json.dump(dato, archivo, indent=4)

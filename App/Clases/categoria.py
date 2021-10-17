@@ -15,18 +15,21 @@ class Categoria():
         )
         db.guardarCategoria(self.dato)
 
-    def eliminarCategoria(self, nombre):
+    def eliminarCategoria(self, id):
         self.dato = db.datosCategoria()
+        self.contador = 0
         for i in self.dato['categorias']:
-            for v in i.values():
-                if v == nombre:
-                    self.dato["categorias"].remove(i)
+            self.contador += 1
+            if self.contador == id:
+                self.dato['categorias'].remove(i)
         db.guardarCategoria(self.dato)
 
     def listarCategoria(self):
         self.dato = db.datosCategoria()
         self.contador = 0
+        print("===========================")
         print('ID \t NOMBRE')
+        print("===========================")
         for i in self.dato['categorias']:
             self.contador += 1
             print(f"{self.contador}", end=" ")
