@@ -33,3 +33,12 @@ class Categoria():
             for v in i.values():
                 print(f"\t {v}", end=" ")
             print("\n===========================")
+
+    def retornarCategoria(self, id):
+        self.dato = db.datosCategoria()
+        self.contador = 0
+        for i in self.dato['categorias']:
+            self.contador += 1
+            if self.contador == id:
+                for v in i.values():
+                    return v

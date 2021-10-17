@@ -1,8 +1,9 @@
 from Clases.autor import Autor
 from Clases.categoria import Categoria
+from Clases.libro import Libro
 a = Autor()
 c = Categoria()
-
+l = Libro()
 
 # PRIMERA PARTE DEL PROYECTO
 
@@ -44,7 +45,11 @@ def listarAutores():
 # TERCERA PARTE DEL PROYECTO
 
 def registrarLibro():
-    
+    listarCategorias()
+    idCategoria = int(input("INGRESE EL ID DE LA CATEGORIA: "))
+    l.categoria = c.retornarCategoria(idCategoria)
+    idAutor = int(input("INGRESE EL ID DEL AUTOR: "))
+    l.autor = a.retornarAutor(idAutor)
     pass
 
 
@@ -57,6 +62,8 @@ def listarLibros():
 
 
 while True:
+    n = a.retornarAutor(1)
+    print(n)
     print('===========================')
     print('[1]REGISTRAR CATEGORIA')
     print('[2]ELIMINAR CATEGORIA')

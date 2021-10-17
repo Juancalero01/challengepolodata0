@@ -35,3 +35,14 @@ class Autor():
             for v in i.values():
                 print(f"\t {v}", end=" ")
             print("\n===========================")
+
+    def retornarAutor(self, id):
+        self.dato = db.datosAutor()
+        self.contador = 0
+        self.retorno = ()
+        for i in self.dato['autores']:
+            self.contador += 1
+            if self.contador == id:
+                for v in i.values():
+                    self.retorno = self.retorno + (v,)
+                return self.retorno
