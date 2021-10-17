@@ -43,15 +43,17 @@ def listarAutores():
 
 # TERCERA PARTE DEL PROYECTO
 
+def registrarLibro():
+    
+    pass
 
 
+def eliminarLibro():
+    pass
 
 
-
-
-
-
-
+def listarLibros():
+    pass
 
 
 while True:

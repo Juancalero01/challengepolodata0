@@ -27,8 +27,11 @@ class Autor():
 
     def listarAutor(self):
         self.dato = db.datosAutor()
-        print('NOMBRE \t APELLIDO')
+        self.contador = 0
+        print('ID \t NOMBRE \t APELLIDO')
         for i in self.dato['autores']:
+            self.contador += 1
+            print(f"{self.contador}", end=" ")
             for v in i.values():
-                print(v, end=" \t ")
-            print("\n=================================")
+                print(f"\t {v}", end=" ")
+            print("\n===========================")

@@ -1,25 +1,10 @@
 {
     "categorias": [
         {
-            "nombre": "Aventuras"
+            "nombre": "Ciencia Ficcion"
         },
         {
-            "nombre": "Ciencia Ficción"
-        },
-        {
-            "nombre": "Terror y misterio"
-        },
-        {
-            "nombre": "Romántica"
-        },
-        {
-            "nombre": "Cuento"
-        },
-        {
-            "nombre": "Teatro"
-        },
-        {
-            "nombre": "Mitología"
+            "nombre": "Historia"
         }
     ]
 }

@@ -1,20 +1,12 @@
 {
     "autores": [
         {
-            "nombre": "Juan Carlos",
-            "apellido": "González"
+            "nombre": "Jose fernando",
+            "apellido": "Guerrero"
         },
         {
-            "nombre": "Miguel Ángel",
-            "apellido": "Sosa"
-        },
-        {
-            "nombre": "Ana María",
-            "apellido": "Pérez"
-        },
-        {
-            "nombre": "María Cristina",
-            "apellido": "Martínez"
+            "nombre": "Diego Javier",
+            "apellido": "Acuña"
         }
     ]
 }

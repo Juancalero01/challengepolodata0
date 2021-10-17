@@ -25,8 +25,11 @@ class Categoria():
 
     def listarCategoria(self):
         self.dato = db.datosCategoria()
-        print('NOMBRE')
+        self.contador = 0
+        print('ID \t NOMBRE')
         for i in self.dato['categorias']:
+            self.contador += 1
+            print(f"{self.contador}", end=" ")
             for v in i.values():
-                print(v, end=" ")
-            print("\n==========")
+                print(f"\t {v}", end=" ")
+            print("\n===========================")
